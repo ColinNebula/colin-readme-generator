@@ -22,7 +22,6 @@ const promptUser = () => {
         // Validate the properties to check if a valid value was provided by the user
         validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
       },
-      
       {
         type: 'input',
         name: 'description',
@@ -101,7 +100,6 @@ const promptUser = () => {
         credits,
         license,
         features,
-        usage,
         contributing,
         author,
         tests
@@ -150,7 +148,7 @@ const promptUser = () => {
 //function writeToFile(fileName, data) {}
 createNewFile(title,template);
 }
-};
+);
 // TODO: Create a function to initialize app
 //function init() {}
 
@@ -159,10 +157,10 @@ createNewFile(title,template);
 function createNewFile(fileName, data){
 
     fs.writeFile(`./${fileName.toLowerCase().split(' ').join('')}.md`,data,(err)=>{ 
-        if(err){
+        if(err) {
             console.log(err)
         }
         console.log('README complete! Check out README.md to see the output!');
 })
 }
-    
+}
