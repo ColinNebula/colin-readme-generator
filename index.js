@@ -1,13 +1,16 @@
 // TODO: Include packages needed for this application
-const inquirer = require('inquirer');
+const commandLineArgs = process.argv;
+console.log(commandLineArgs);
 const fs = require('fs');
+const inquirer = require('inquirer');
+
 const moment = require('moment');
 const dateTime = moment();
 console.log(dateTime.format('MMMM Do YYYY, h:mm:ss a'));
 // TODO: Create an array of questions for user input
 //const questions = [];
-const promptUser = () => {
-    return inquirer.prompt([
+inquirer.prompt( 
+    [
       {
         type: 'input',
         name: 'title',
@@ -41,14 +44,14 @@ const promptUser = () => {
       {
         type: 'input',
         name: 'Usage',
-        message: 'Provide some information about your app:',
+        message: 'Provide some information about how the app is used:',
         // Validate the properties to check if a valid value was provided by the user
         validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
       },
       {
         type: 'input',
         name: 'credits',
-        message: 'Provide some information about your app:',
+        message: 'Provide credits information if applicable:',
         // Validate the properties to check if a valid value was provided by the user
         validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
       },
@@ -84,7 +87,7 @@ const promptUser = () => {
       {
         type: 'input',
         name: 'tests',
-        message: 'Provide some information about your app:',
+        message: 'Provide test information for your app:',
         // Validate the properties to check if a valid value was provided by the user
         validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
       },
@@ -97,7 +100,7 @@ const promptUser = () => {
         validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
         
       },
-]
+    ]
 
     ).then(({
         title,
@@ -148,7 +151,8 @@ const promptUser = () => {
         ## Author
         ${author}
         ## Tests
-        ${tests}`;
+        ${tests}
+        `;
     
 
     
@@ -170,5 +174,4 @@ function createNewFile(fileName, data){
         }
         console.log('README complete! Check out README.md to see the output!');
 })
-}
 }
