@@ -88,10 +88,18 @@ const promptUser = () => {
         // Validate the properties to check if a valid value was provided by the user
         validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
       },
-    
-    [
+      {
+        type: 'confirm',
+        name: 'confirmAddProject',
+        message: 'Would you like to generate another README.md? (Required)',
+        default: false,
+        // Validate the properties to check if a valid value was provided by the user
+        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
+        
+      },
+]
 
-    ].then(({
+    ).then(({
         title,
         link,
         description,
@@ -140,7 +148,7 @@ const promptUser = () => {
         ## Author
         ${author}
         ## Tests
-        ${tests}`
+        ${tests}`;
     
 
     
