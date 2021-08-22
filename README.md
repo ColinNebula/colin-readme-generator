@@ -4,7 +4,7 @@
 
 
 ## Description
-
+This is a README Generator app where the user is prompted to enter the required information, the answers are processed and an output in the form of a README file is presented
 
 ## Project URL
 N/A
