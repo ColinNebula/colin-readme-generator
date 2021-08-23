@@ -31,8 +31,9 @@ Please watch the video provided fot installation and usage instructions
 
 
 ## Usage 
+![ReadmeGenScreenshot ](https://user-images.githubusercontent.com/57843842/130390547-d950268f-4bf4-44e0-b557-3a30383ce722.jpg)
 
-Please watch the video provided fot installation and usage instructions.
+Please watch the video provided for more installation and usage instructions.
 
 ## Credits
 N/A
