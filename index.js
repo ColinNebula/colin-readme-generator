@@ -92,6 +92,20 @@ inquirer.prompt(
         validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
       },
       {
+        type: 'input',
+        name: 'Github:',
+        message: 'Please enter your github username: (Required)',
+        // Validate the properties to check if a valid value was provided by the user
+        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
+      },
+      {
+        type: 'input',
+        name: 'E-mail:',
+        message: 'Please enter your E-mail: (Required)',
+        // Validate the properties to check if a valid value was provided by the user
+        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
+      },
+      {
         type: 'confirm',
         name: 'confirmAddProject',
         message: 'Would you like to generate another README.md? (Required)',
@@ -102,59 +116,73 @@ inquirer.prompt(
       },
     ]
 
-    ).then(({
-        title,
-        link,
-        description,
-        installation,
-        usage,
-        credits,
-        license,
-        features,
-        contributing,
-        author,
-        tests
+).then(({
+title,
+link,
+description,
+installation,
+usage,
+credits,
+license,
+features,
+contributing,
+author,
+tests,
+github,
+email
     })=>{
-        // This is the Template Used
-        const template = `# ${title}
-
-        * [Title](#title)
-        * [Link](#link)
-        * [Description](#description)
-        * [Installation](#installation)
-        * [Usage](#usage)
-        * [Credits](#credits)
-        * [License](#license) 
-        * [Features](#features)
-        * [Contributing](#contributing)
-        * [Author](#author)
-        * [Tests](#tests) 
+// This is the Template Used
+const template = `# ${title}
+# Table of Contents       
+* [Title](#title)
+* [Subtitle](#subtitle)
+* [Github](#link)
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license) 
+* [Features](#features)
+* [Contributing](#contributing)
+* [Author](#author)
+* [Tests](#tests) 
        
-        ## Link
-        ${link}
-        ## Description
-        ${description}
-        ## Installation
-        ${installation}
-        ## Usage
-        ${usage}
-        ## Credits
-        ${credits}
-        ## License
-        ${license}
-        ## Features
-        ${features}
-        ## Contributing
-        ${contributing}
-        ## Credits
-        ${credits}
-        ## Author
-        ${author}
-        ## Tests
-        ${tests}
-        `;
-    
+## Link
+${link}
 
+## Description
+${description}
+
+## Installation
+${installation}
+
+## Usage
+${usage}
+
+## Credits
+${credits}
+
+## License
+${license}
+
+## Features
+${features}
+
+## Contributing
+${contributing}
+
+## Credits
+${credits}
+
+## Author
+${author}
+
+## Tests
+${tests}
+
+# Questions    
+* Github :${github}
+* E-mail :${email}`;
     
 // TODO: Create a function to write README file
 //function writeToFile(fileName, data) {}

@@ -42,4 +42,5 @@ N/A
 ## Contributing
 N/A
 
-## Tests
+## Author
+Colin Nebula
