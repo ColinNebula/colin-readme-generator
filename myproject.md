@@ -1,4 +1,4 @@
-# myProject
+# MyProject
 
 # Table of Contents       
 * [Title](#title)
@@ -15,13 +15,13 @@
 * [Tests](#tests) 
        
 ## Link
-myProject@github.com
+gihttps://github.com/ColinNebula/colin-readme-generator
 
 ## Description
-This app generates a quick readme file for your project.
+This is a README Generator application where the user is prompted to enter the required information, the answers are processed, and the user gets an output in the form of a README.md file.
 
 ## Installation
-please watch the video for more information about installation.
+Please checkout the video
 
 ## Usage
 undefined
@@ -33,7 +33,7 @@ N/A
 
 
 ## Features
-features include inquirer and moment npm's.
+This app features include momentJs and inquirer
 
 ## Contributing
 N/A

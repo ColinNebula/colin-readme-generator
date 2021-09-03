@@ -1,124 +1,24 @@
 // TODO: Include packages needed for this application
-const commandLineArgs = process.argv;
-console.log(commandLineArgs);
 const fs = require('fs');
 const inquirer = require('inquirer');
-
+const badgeIcon = require("./badges.js");
+const questions = require("./questions");
+const{renderLicenseBadge, renderLicenseLink} = require('./badges.js');
 const moment = require('moment');
 const dateTime = moment();
 console.log(dateTime.format('MMMM Do YYYY, h:mm:ss a'));
+
+
+
+
 // TODO: Create an array of questions for user input
 //const questions = [];
-inquirer.prompt( 
-    [
-      {
-        type: 'input',
-        name: 'title',
-        message: 'What is your project title? (Required)',
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}     
-      },
-      {
-        type: 'input',
-        name: 'link',
-        message: 'Enter the GitHub Repository link to your project. (Required)',
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
-      },
-      {
-        type: 'input',
-        name: 'description',
-        message: 'Please provide some information about your app: (Required)',
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
-      
-     
-    },
-    {
-        type: 'input',
-        name: 'installation',
-        message: 'How to install this app',
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
-      },
-      {
-        type: 'input',
-        name: 'Usage',
-        message: 'Provide some information about how the app is used:',
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
-      },
-      {
-        type: 'input',
-        name: 'credits',
-        message: 'Provide credits information if applicable:',
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
-      },
-      {
-        type: 'checkbox',
-        name: 'license',
-        message: 'What license did you use for this project? (Check one)',
-        choices: ['The GPL License', 'MIT', 'GNU', 'N/A'],
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
-      },
-      {
-        type: 'input',
-        name: 'features',
-        message: 'Provide some information about your app features:',
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
-      },
-      {
-        type: 'input',
-        name: 'contributing',
-        message: 'Provide any contributing information for your app:',
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
-      },
-      {
-        type: 'input',
-        name: 'author',
-        message: 'Provide name of the author for your app:',
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
-      },
-      {
-        type: 'input',
-        name: 'tests',
-        message: 'Provide test information for your app:',
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
-      },
-      {
-        type: 'input',
-        name: 'Git:',
-        message: 'Please enter your github username: (Required)',
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
-      },
-      {
-        type: 'input',
-        name: 'E-mail:',
-        message: 'Please enter your E-mail: (Required)',
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
-      },
-      {
-        type: 'confirm',
-        name: 'confirmAddProject',
-        message: 'Would you like to generate another README.md? (Required)',
-        default: false,
-        // Validate the properties to check if a valid value was provided by the user
-        validate: (value)=>{ if(value){return true} else {return 'we need a value here to continue please!'}}
-        
-      },
-    ]
+const promptUser = () => { 
+    return inquirer.prompt( 
+      questions
 
 ).then(({
 title,
-link,
 description,
 installation,
 usage,
@@ -126,12 +26,14 @@ credits,
 license,
 features,
 contributing,
+badges,
 author,
 tests,
 github,
 email
     })=>{
 // This is the Template Used
+console.log(license);
 const template = `# ${title}
 
 # Table of Contents       
@@ -143,13 +45,14 @@ const template = `# ${title}
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license) 
+* [Badges](#badges)
 * [Features](#features)
 * [Contributing](#contributing)
 * [Author](#author)
 * [Tests](#tests) 
        
 ## Link
-${link}
+${github}
 
 ## Description
 ${description}
@@ -164,13 +67,19 @@ ${usage}
 ${credits}
 
 ## License
-${license}
+${renderLicenseBadge(license)}
+
+${renderLicenseLink(license)}
+
 
 ## Features
 ${features}
 
 ## Contributing
 ${contributing}
+
+## Badges
+${badges}
 
 ## Credits
 ${credits}
@@ -182,8 +91,8 @@ ${author}
 ${tests}
 
 # Questions    
-* Github :${github}
-* E-mail :${email}`;
+* Github :${github}](https://github.com/${github}/)
+* E-mail :${email}](https://email.com/${email}`;
     
 // TODO: Create a function to write README file
 //function writeToFile(fileName, data) {}
@@ -197,10 +106,12 @@ createNewFile(title,template);
 //init();
 function createNewFile(fileName, data){
 
-    fs.writeFile(`./${fileName.toLowerCase().split(' ').join('')}.md`,data,(err)=>{ 
+    fs.writeFile(`./${fileName.toUpperCase().split(' ').join('')}.md`,data,(err)=>{ 
         if(err) {
             console.log(err)
         }
         console.log('README complete! Check out README.md to see the output!');
 })
 }
+}
+promptUser()
