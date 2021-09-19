@@ -4,7 +4,7 @@ function renderLicenseBadge(license) {
       case "MIT":
         return "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
       
-      case "GPL":
+      case "GPLv3":
         return "[![License: GPL]((https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)";
   
         case "Apache 2.0":
