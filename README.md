@@ -17,7 +17,7 @@ https://drive.google.com/file/d/1F45y6eXYYnTbNEiUyu7eM3DEyJIXqaZX/view?usp=shari
 
 
 ## Link to Github repository
-https://github.com/ColinNebula/colin-readme-generator
+https://github.com/ColinNebula/colin-readme-generator/tree/main
 
 ## Table of Contents
 * [Installation](#installation)
