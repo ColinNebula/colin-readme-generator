@@ -27,7 +27,7 @@ https://github.com/ColinNebula/colin-readme-generator
 
 ## Installation
 
-Please watch the video provided fot installation and usage instructions
+Please watch the video provided.
 
 
 ## Usage 
