@@ -11,7 +11,7 @@ I WANT a README generator
 SO THAT I can quickly create a professional README for a new project
 
 ## Project URL
-N/A
+https://drive.google.com/file/d/1F45y6eXYYnTbNEiUyu7eM3DEyJIXqaZX/view?usp=sharing
 
 ## Project screenshot
 
@@ -27,7 +27,7 @@ https://github.com/ColinNebula/colin-readme-generator
 
 ## Installation
 
-Please watch the video provided fot installation and usage instructions
+Please watch the video provided.
 
 
 ## Usage 
