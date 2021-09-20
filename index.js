@@ -29,7 +29,7 @@ contributing,
 badges,
 author,
 tests,
-github,
+link,
 email
     })=>{
 // This is the Template Used
@@ -52,7 +52,7 @@ const template = `# ${title}
 * [Tests](#tests) 
        
 ## Link
-${github}
+${link}
 
 ## Description
 ${description}
@@ -91,7 +91,7 @@ ${author}
 ${tests}
 
 # Questions    
-* Github :${github}](https://github.com/${github}/)
+* Github : [${link}](https://github.com/${link}"/)
 * E-mail :${email}](https://email.com/${email}`;
     
 // TODO: Create a function to write README file
