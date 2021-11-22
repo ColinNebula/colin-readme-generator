@@ -1,5 +1,4 @@
-# colin-readme-generator
-
+# Colin-Readme-Generator
 ## Description
 This is a README Generator application where the user is prompted to enter the required information, the answers are processed, and the user gets an output in the form of a README.md file. This app was created from the command line using NodeJs, and npm Enquirer as a dependency.
 ## Table of Contents
@@ -12,7 +11,7 @@ AS A developer
 I WANT a README generator
 SO THAT I can quickly create a professional README for a new project
 ## Project URL
-https://drive.google.com/file/d/1F45y6eXYYnTbNEiUyu7eM3DEyJIXqaZX/view?usp=sharing
+https://watch.screencastify.com/v/2WFQE5XlJRMNSgAs4Q1D
 ## Link to Github repository
 https://github.com/ColinNebula/colin-readme-generator/tree/main
 ## Project screenshot
