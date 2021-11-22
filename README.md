@@ -1,55 +1,35 @@
 # colin-readme-generator
 
-# Professional README Generator 
-
 ## Description
-This is a README Generator application where the user is prompted to enter the required information, the answers are processed, and the user gets an output in the form of a README.md file.
-
+This is a README Generator application where the user is prompted to enter the required information, the answers are processed, and the user gets an output in the form of a README.md file. This app was created from the command line using NodeJs, and npm Enquirer as a dependency.
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Author](#author)
+* [License](#license)
 ## User Story
 AS A developer
 I WANT a README generator
 SO THAT I can quickly create a professional README for a new project
-
 ## Project URL
 https://drive.google.com/file/d/1F45y6eXYYnTbNEiUyu7eM3DEyJIXqaZX/view?usp=sharing
-
-## Project screenshot
-
-
 ## Link to Github repository
 https://github.com/ColinNebula/colin-readme-generator/tree/main
-
-## Table of Contents
-* [Installation](#installation)
-* [Usage](#usage)
-* [Credits](#credits)
-* [License](#license)
-
-## Installation
-
-Please watch the video provided.
-
-
-## Usage 
+## Project screenshot
 ![ReadmeGenScreenshot ](https://user-images.githubusercontent.com/57843842/130390547-d950268f-4bf4-44e0-b557-3a30383ce722.jpg)
-
-Please watch the video provided for more installation and usage instructions.
-
-## Credits
-N/A
-
-## License
-MIT
-
+## Installation
+* clone the repository 
+* download the repository to a desktop
+* Node index to run the app
+## Usage 
+Please view the video for a walkthrough on the usage of this app
+## License: 
+This application is covered by [MIT](https://opensource.org/licenses/MIT) license.
+[![license](https://img.shields.io/badge/license-MIT-brightgreen)](https://shields.io)
 ## Features
 Features include inquirer and MomentJs npm's
-
-## Contributing
-N/A
-
 ## Author
 Colin Nebula
-
 ## Acceptance Criteria
 GIVEN a command-line application that accepts user input
 WHEN I am prompted for information about my application repository

@@ -92,7 +92,7 @@ ${tests}
 
 # Questions    
 * Github : [${link}](https://github.com/${link}"/)
-* E-mail :${email}](https://email.com/${email}`;
+* E-mail :[${email}](https://email.com/${email}`;
     
 // TODO: Create a function to write README file
 //function writeToFile(fileName, data) {}
